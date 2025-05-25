@@ -23,6 +23,7 @@ jobs:
 
     - name: Grant execute permission for gradlew 
       run: chmod +x gradlew
+      working-directory: serving-web-content/
 
     #- name: Build with Gradle and Run Tests 
     #  run: ./gradlew build 
@@ -30,6 +31,7 @@ jobs:
    
     - name: Run Unit Tests Only
       run: ./gradlew test
+      working-directory: serving-web-content/
 
 #- name: Upload Test Report
 #  if: always()
