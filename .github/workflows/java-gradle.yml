@@ -17,29 +17,16 @@ jobs:
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '21' 
+        java-version: '21'
         distribution: 'temurin'
         cache: 'gradle'
+        cache-dependency-path: serving-web-content/
 
-    - name: Grant execute permission for gradlew 
+    - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: serving-web-content/
 
-    #- name: Build with Gradle and Run Tests 
-    #  run: ./gradlew build 
-
-   
     - name: Run Unit Tests Only
       run: ./gradlew test
       working-directory: serving-web-content/
-
-#- name: Upload Test Report
-#  if: always()
-#  uses: actions/upload-artifact@v4
-#  with:
-#    name: test-report
-
-#    path: build/reports/tests/test/ 
-
-#    path: build/reports/tests/test/ 
 
